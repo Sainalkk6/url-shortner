@@ -26,4 +26,8 @@ const getAllUrls = () => __awaiter(void 0, void 0, void 0, function* () {
     const results = yield url_1.default.getURLS();
     return results;
 });
-exports.default = { createShortUrl, getOriginalUrl, getAllUrls };
+const checkExistence = (originalUrl) => __awaiter(void 0, void 0, void 0, function* () {
+    const results = yield url_1.default.checkExistence(originalUrl);
+    return results;
+});
+exports.default = { createShortUrl, getOriginalUrl, getAllUrls, checkExistence };

@@ -15,7 +15,6 @@ export default function Home() {
     const data = await response.json();
     setUrl("");
     setShorted(data);
-    console.log(data);
   };
   return (
     <div className="flex bg-slate-500 w-full items-center justify-center min-h-screen">
@@ -26,7 +25,7 @@ export default function Home() {
           <button type="submit" className="bg-black px-5 py-2 rounded max-w-[100px] text-lg text-white">
             Submit
           </button>
-          {shorted.length > 0 && shorted === "Please provide a valid url" ? <span className="text-red-500">{shorted}</span> : (shorted.length > 0 && <span className="text-black">{`http://localhost:3012/${shorted}`}</span>)}
+          {shorted.length > 0 && shorted === "Please provide a valid url" ? <span className="text-red-500">{shorted}</span> : shorted.length > 0 && <span className="text-black">{`http://localhost:3012/${shorted}`}</span>}
         </form>
       </div>
     </div>

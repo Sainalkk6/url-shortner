@@ -19,6 +19,10 @@ const postUrl = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const urlSchema = zod_1.z.string().url();
         const originalUrl = urlSchema.parse(req.body.original_url);
+        const isExisting = yield url_shorten_services_1.default.checkExistence(originalUrl);
+        if (isExisting[0] !== undefined) {
+            return res.status(201).json(isExisting[0].shorted_url);
+        }
         const shortUrl = yield url_shorten_services_1.default.createShortUrl(originalUrl);
         res.status(201).json(shortUrl);
         return;
@@ -38,7 +42,6 @@ const redirectUrl = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
 });
 exports.redirectUrl = redirectUrl;
 const getAllUrl = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(456);
     const urls = yield url_shorten_services_1.default.getAllUrls();
     return res.status(200).json(urls);
 });

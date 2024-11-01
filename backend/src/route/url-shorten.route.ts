@@ -3,7 +3,7 @@ import {getAllUrl,postUrl,redirectUrl} from "../controller/url-shorten.controlle
 
 const router = express.Router()
 
-router.post("/",postUrl)
+router.post("/",postUrl as any)
 router.get("/:url",redirectUrl as any)
 router.get("/",getAllUrl as any)
 
