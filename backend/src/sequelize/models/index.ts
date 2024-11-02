@@ -14,5 +14,5 @@ const options: Options = {
 const sequelize = new Sequelize(options)
 
 
-
+////
 export default sequelize

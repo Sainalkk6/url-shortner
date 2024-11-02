@@ -12,4 +12,5 @@ const options = {
     sync: { alter: true, logging: true }
 };
 const sequelize = new sequelize_1.Sequelize(options);
+////
 exports.default = sequelize;
