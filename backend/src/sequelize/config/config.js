@@ -1,0 +1,24 @@
+import "dotenv/config"
+export default{
+  development: {
+    username: process.env.POSTGRES_USERNAME,
+    password:  process.env.POSTGRES_PASSWORD,
+    database:  process.env.POSTGRES_DATABASENAME,
+    host: "127.0.0.1",
+    dialect: "postgres"
+  },
+  test: {
+    username: process.env.POSTGRES_USERNAME,
+    password:  process.env.POSTGRES_PASSWORD,
+    database:  process.env.POSTGRES_DATABASENAME,
+    host: "127.0.0.1",
+    dialect: "postgres"
+  },
+  production: {
+    username: process.env.POSTGRES_USERNAME,
+    password:  process.env.POSTGRES_PASSWORD,
+    database:  process.env.POSTGRES_DATABASENAME,
+    host: "127.0.0.1",
+    dialect: "postgres"
+  }
+}
