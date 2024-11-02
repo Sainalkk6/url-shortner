@@ -22,4 +22,5 @@ const getAllUrls = async (): Promise<UrlAttributes[]> => {
     return results;
 };
 
+
 export default { createShortUrl, getOriginalUrl, getAllUrls };

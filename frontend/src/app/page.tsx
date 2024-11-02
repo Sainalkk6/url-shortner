@@ -15,8 +15,9 @@ export default function Home() {
     const data = await response.json();
     setUrl("")
     setShorted(data);
-
   };
+
+  
 
   return (
     <div className="flex bg-slate-500 w-full items-center justify-center min-h-screen">
